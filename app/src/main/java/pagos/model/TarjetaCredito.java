@@ -2,7 +2,7 @@ package pagos.model;
 
 import pagos.interfaces.Pago;
 
-public class TarjetaCredito implements Pago {
+public class TarjetaCredito extends MetodoPagoBase {
     private String numeroTarjeta;
 
     public TarjetaCredito(String numeroTarjeta) {
@@ -10,7 +10,7 @@ public class TarjetaCredito implements Pago {
     }
 
     @Override
-    public void pago(int monto) {
+    public void procesarTransaccion(int monto) {
         System.out.println("Pago de " + monto + " realizado con Tarjeta de Crédito número " + numeroTarjeta);
     }
 
